@@ -10,6 +10,7 @@ const Colour = ({ color, handleCopyColor, allColors }) =>
             onClick={handleCopyColor}
             style={{
             backgroundColor: color,
+            outline: `dashed 2px ${color}cc`
             }}
         >
             <span
