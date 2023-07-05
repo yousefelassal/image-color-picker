@@ -16,7 +16,7 @@ h1{
 @font-palette-values --myPalette {
     font-family: "Nabla";
     base-palette: 3;
-    override-colors: 6 #FFB978;
+    override-colors: 6 #2f2d36;
   }
 
 .container{
