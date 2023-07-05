@@ -11,7 +11,7 @@ const FileInput = ({label, handleFile}) => {
               whileTap={{ scale: 0.95 }}
             >
               <input
-                id="img" type="file" className="text-[#84849D] text-sm text-grey-500
+                id="img" type="file" className="text-[#84849D] text-sm text-grey-500 w-64
                 file:mr-5 file:py-2 file:px-6
                 file:rounded-full file:border-0 file:font-semibold
                 file:text-sm hover:cursor-pointer file:hover:cursor-pointer
