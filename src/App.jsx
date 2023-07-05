@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const App = () => {
   const [color, setColor] = useState("#DFE0FB");
@@ -6,13 +7,31 @@ const App = () => {
 
   return (
     <div className="container">
-      <div className="flex flex-col bg-[#121215] p-2">
+      <div className="flex flex-col bg-[#121215] p-4">
         <div className="flex gap-1 items-center">
           <img src="/favicon.svg" alt="logo" width="32px"/>
-          <h1 className="text-2xl font-bold bg-clip-text text-transparent hover:cursor-default bg-gradient-to-tr from-[#DFE0FB] to-[#8D8FD2]">Picker</h1>
+          <h1 className="text-2xl font-bold bg-clip-text text-transparent hover:cursor-default bg-gradient-to-tr from-[#DFE0FB] to-[#8D8FD2]">ColourPicker</h1>
+        </div>
+        <div className="flex-col mt-6 flex gap-2 justify-center">
+            <label htmlFor="img" className="text-[#8D8FD2]">Select Image</label>
+          <div className="bg-[#2F2D36] px-4 py-2 rounded-2xl w-72 shadow-md">
+            <motion.div 
+              className="bg-[#655E79] rounded-full w-32 hover:bg-[#72698c] hover:cursor-pointer shadow-sm"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <motion.input
+              id="img" type="file" className="text-[#84849D] text-sm text-grey-500
+              file:mr-5 file:py-2 file:px-6
+              file:rounded-full file:border-0 file:font-semibold
+              file:text-sm hover:cursor-pointer file:hover:cursor-pointer
+              file:bg-clip-text file:text-transparent file:bg-gradient-to-r file:from-[#DACEFF] file:to-[#C6B5FF]
+              " accept="image/*"/>
+            </motion.div>
+          </div>
         </div>
       </div>
-      <div className="bg-[#313143]">
+      <div className="bg-[#2F2D36]">
 
       </div>
     </div>
