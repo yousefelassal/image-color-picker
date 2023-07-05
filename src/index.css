@@ -20,8 +20,12 @@ h1{
 
 .container{
     display: grid;
-    grid-template-columns: repeat(2, minmax(450px, 1fr));
+    grid-template-columns: 325px 1fr;
     min-height: 100vh;
+}
+
+.col-shadow{
+    box-shadow: 0px -10px 10px 2px #16161acc inset;
 }
 
 @media screen and (max-width: 768px){
