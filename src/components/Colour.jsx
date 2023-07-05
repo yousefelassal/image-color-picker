@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
-const Colour = ({ color, handleCopyColor }) => 
-    <div className="mt-8 flex flex-col gap-2">
+const Colour = ({ color, handleCopyColor, allColors }) =>  
+<>
+    <div className="mt-8 flex flex-col gap-4">
         <motion.button
             className="px-4 py-2 rounded-2xl shadow-md h-32"
             whileHover={{ scale: 1.02 }}
@@ -19,6 +20,27 @@ const Colour = ({ color, handleCopyColor }) =>
                 {color}
             </span>
         </motion.button>
+        <div className="flex flex-wrap gap-2">
+        {
+            allColors.map((color, index) => (
+                <motion.button
+                    key={index}
+                    initial={{ opacity: 0, x: -100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={handleCopyColor}
+                    className="rounded-full shadow-md h-8 w-8"
+                    style={{
+                        backgroundColor: color,
+                    }}
+                />
+
+                    
+            ))
+            }
+        </div>
     </div>
+</>
 
 export default Colour

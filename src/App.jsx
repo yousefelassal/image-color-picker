@@ -7,11 +7,14 @@ import Colour from "./components/Colour";
 const App = () => {
   const [color, setColor] = useState("#dfe0fb");
   const [image, setImage] = useState(null);
+  const [allColors, setAllColors] = useState([]);
+
 
   const openEyedropper = async () => {
     let eyeDropper = new EyeDropper();
     const { sRGBHex } = await eyeDropper.open();
     setColor(sRGBHex);
+    setAllColors([...allColors, sRGBHex]);
   };
 
   const handleFile = (e) => {
@@ -31,7 +34,7 @@ const App = () => {
         </div>
           <FileInput label="Upload Image" handleFile={handleFile}/>
           <Eyedropper openEyedropper={openEyedropper}/>
-          <Colour color={color} handleCopyColor={handleCopyColor}/>
+          <Colour color={color} handleCopyColor={handleCopyColor} allColors={allColors} />
       </div>
         <Image image={image} />
     </div>
