@@ -2,9 +2,10 @@ import { useState } from "react";
 import FileInput from "./components/FileInput";
 import Eyedropper from "./components/Eyedropper";
 import Image from "./components/Image";
+import Colour from "./components/Colour";
 
 const App = () => {
-  const [color, setColor] = useState("#DFE0FB");
+  const [color, setColor] = useState("#dfe0fb");
   const [image, setImage] = useState(null);
 
   const openEyedropper = async () => {
@@ -17,6 +18,10 @@ const App = () => {
     setImage(URL.createObjectURL(e.target.files[0]));
   };
 
+  const handleCopyColor = async () => {
+    await navigator.clipboard.writeText(color);
+  };
+
   return (
     <div className="container">
       <div className="flex flex-col bg-[#121215] p-4 border-r border-r-neutral-800 col-shadow">
@@ -26,6 +31,7 @@ const App = () => {
         </div>
           <FileInput label="Upload Image" handleFile={handleFile}/>
           <Eyedropper openEyedropper={openEyedropper}/>
+          <Colour color={color} handleCopyColor={handleCopyColor}/>
       </div>
         <Image image={image} />
     </div>
