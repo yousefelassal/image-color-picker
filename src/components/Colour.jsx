@@ -23,20 +23,27 @@ const Colour = ({ color, handleCopyColor, allColors }) =>
         <div className="flex flex-wrap gap-2">
         {
             allColors.map((color, index) => (
-                <motion.button
-                    key={index}
-                    initial={{ opacity: 0, x: -100 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={handleCopyColor}
-                    className="rounded-full shadow-md h-8 w-8"
-                    style={{
-                        backgroundColor: color,
-                    }}
-                />
-
-                    
+                <div className="relative wrapper" key={index}>
+                    <motion.button
+                        initial={{ opacity: 0, x: -100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={handleCopyColor}
+                        className="rounded-full shadow-md h-8 w-8 peer"
+                        style={{
+                            backgroundColor: color,
+                        }}
+                    />
+                    <div 
+                        className="absolute -bottom-12 left-0 color-popover invisible z-10 inline-block w-18 px-4 py-2 text-sm bg-[#2F2D36] rounded-lg shadow-sm peer-hover:visible"
+                        style={{
+                            color: color === "#2f2d36" ? "#ffffff" : color,
+                        }}
+                    >
+                        {color}
+                    </div>
+                </div>
             ))
             }
         </div>
