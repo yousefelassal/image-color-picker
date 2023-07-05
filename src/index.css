@@ -20,13 +20,44 @@ h1{
 
 .container{
     display: grid;
-    grid-template-columns: 325px 1fr;
+    grid-template-columns: 325px calc(100vw - 325px);
     min-height: 100vh;
 }
 
 .col-shadow{
     box-shadow: 0px -10px 10px 2px #16161acc inset;
 }
+
+.img-col{
+    padding: 2.4rem;
+    display: grid;
+    place-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.img-col img{
+    width: 100%;
+    height: auto;
+    max-width: 900px;
+    margin: auto;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 10;
+}
+
+.img-col div {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  
+    background-size: cover;
+    background-position: center;
+    scale: 1.2;
+  
+    filter: blur(4px);
+    opacity: 0.5;
+  }
 
 @media screen and (max-width: 768px){
     .container{

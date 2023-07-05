@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 
-const Eyedropper = ({ color, setColor }) => {
+const Eyedropper = ({ openEyedropper }) => {
     return (
         <div className="mt-8 flex flex-col gap-2">
             <h2 className="text-[#8D8FD2]">Pick Colour</h2>
@@ -8,6 +8,7 @@ const Eyedropper = ({ color, setColor }) => {
                 className="flex items-center gap-2 bg-[#655E79] rounded-2xl px-4 py-2 shadow-md hover:bg-[#72698c] group"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={openEyedropper}
             >
                 <motion.div 
                     className="flex gap-1 items-center w-10 h-10 justify-center p-[0.65rem] bg-[#2F2D36] group-hover:bg-[#454350] rounded-xl shadow-sm"

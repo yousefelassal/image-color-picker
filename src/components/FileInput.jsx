@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const FileInput = ({label}) => {
+const FileInput = ({label, handleFile}) => {
     return (
         <div className="flex-col mt-6 flex gap-2 justify-center">
             <label htmlFor="img" className="text-[#8D8FD2]">{label}</label>
@@ -10,13 +10,15 @@ const FileInput = ({label}) => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.95 }}
             >
-              <motion.input
-              id="img" type="file" className="text-[#84849D] text-sm text-grey-500
-              file:mr-5 file:py-2 file:px-6
-              file:rounded-full file:border-0 file:font-semibold
-              file:text-sm hover:cursor-pointer file:hover:cursor-pointer
-              file:bg-clip-text file:text-transparent file:bg-gradient-to-r file:from-[#DACEFF] file:to-[#C6B5FF]
-              " accept="image/*"/>
+              <input
+                id="img" type="file" className="text-[#84849D] text-sm text-grey-500
+                file:mr-5 file:py-2 file:px-6
+                file:rounded-full file:border-0 file:font-semibold
+                file:text-sm hover:cursor-pointer file:hover:cursor-pointer
+                file:bg-clip-text file:text-transparent file:bg-gradient-to-r file:from-[#DACEFF] file:to-[#C6B5FF]
+                " accept="image/*"
+                onChange={handleFile}
+              />
             </motion.div>
           </div>
         </div>
