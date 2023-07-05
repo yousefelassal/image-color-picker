@@ -1,5 +1,6 @@
 import { useState } from "react";
 import FileInput from "./components/FileInput";
+import Eyedropper from "./components/Eyedropper";
 
 const App = () => {
   const [color, setColor] = useState("#DFE0FB");
@@ -13,8 +14,9 @@ const App = () => {
           <h1 className="text-2xl font-bold bg-clip-text text-transparent hover:cursor-default bg-gradient-to-tr from-[#DFE0FB] to-[#8D8FD2]">ColourPicker</h1>
         </div>
           <FileInput label="Upload Image"/>
+          <Eyedropper color={color} setColor={setColor}/>
       </div>
-      <div className="bg-[#2F2D36]">
+      <div className="bg-[#1b1b1f]">
 
       </div>
     </div>

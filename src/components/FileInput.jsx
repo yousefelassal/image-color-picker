@@ -4,7 +4,7 @@ const FileInput = ({label}) => {
     return (
         <div className="flex-col mt-6 flex gap-2 justify-center">
             <label htmlFor="img" className="text-[#8D8FD2]">{label}</label>
-          <div className="bg-[#2F2D36] px-4 py-2 rounded-2xl w-72 shadow-md">
+          <div className="bg-[#2F2D36] px-4 py-2 rounded-2xl shadow-md">
             <motion.div 
               className="bg-[#655E79] rounded-full w-32 hover:bg-[#72698c] hover:cursor-pointer shadow-sm"
               whileHover={{ scale: 1.02 }}
