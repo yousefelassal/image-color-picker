@@ -18,6 +18,7 @@ const FileInput = ({label, handleFile}) => {
                 file:bg-clip-text file:text-transparent file:bg-gradient-to-r file:from-[#DACEFF] file:to-[#C6B5FF]
                 " accept="image/*"
                 onChange={handleFile}
+                multiple={false}
               />
             </motion.div>
           </div>
