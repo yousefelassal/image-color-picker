@@ -24,5 +24,5 @@
   
 </div>
 
-### ❗ [EyeDropper API](https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper_API) is not supported on some browsers ❗
+### ❗ [EyeDropper API](https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper_API) is not supported on some browsers (Use Chrome) ❗
 
