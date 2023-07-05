@@ -13,7 +13,7 @@ const Eyedropper = ({ openEyedropper }) => {
                 <motion.div 
                     className="flex gap-1 items-center w-10 h-10 justify-center p-[0.65rem] bg-[#2F2D36] group-hover:bg-[#454350] rounded-xl shadow-sm"
                 >
-                <img src="src/assets/eyedropper.svg" alt="eyedropper" width="30px"/>
+                <img src="/eyedropper.svg" alt="eyedropper" width="30px"/>
                 </motion.div>
                 <h2 className="bg-clip-text text-transparent bg-gradient-to-r from-[#DACEFF] to-[#C6B5FF] font-semibold">Open Eyedropper</h2>
             </motion.button>
