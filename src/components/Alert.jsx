@@ -1,11 +1,15 @@
 import {TbClipboardCheck} from "react-icons/tb"
+import { motion } from "framer-motion"
 const Alert = ({color, alert}) => {
     if(!alert) return null;
 
     return (
-        <div
+        <motion.div
             role="alert"
-            className="rounded-xl border absolute top-4 left-[35%] border-gray-100 bg-white p-4 shadow-xl z-50"
+            className="rounded-xl border absolute top-4 sm:left-[20%] md:left-[35%] border-gray-100 bg-white p-4 shadow-xl z-50"
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -100 }}
         >
             <div className="flex items-start gap-4">
                 <TbClipboardCheck className="text-green-600 w-6 h-6" />
@@ -41,7 +45,7 @@ const Alert = ({color, alert}) => {
                 </svg>
                 </button>
             </div>
-        </div>
+        </motion.div>
     )
 } 
 
