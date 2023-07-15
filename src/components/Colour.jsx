@@ -5,6 +5,7 @@ const Colour = ({ color, handleCopyColor, allColors, setColor }) =>
     <h2 className="text-[#8D8FD2] -mb-2">Click to Copy</h2>
     <motion.button
             className="px-4 py-2 rounded-2xl shadow-md h-32"
+            animate={{backgroundColor: color}}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => handleCopyColor(color)}
