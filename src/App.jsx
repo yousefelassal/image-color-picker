@@ -21,7 +21,7 @@ const App = () => {
     setImage(URL.createObjectURL(e.target.files[0]));
   };
 
-  const handleCopyColor = async () => {
+  const handleCopyColor = async (color) => {
     await navigator.clipboard.writeText(color);
   };
 
@@ -34,7 +34,7 @@ const App = () => {
         </div>
           <FileInput label="Upload Image" handleFile={handleFile}/>
           <Eyedropper openEyedropper={openEyedropper}/>
-          <Colour color={color} handleCopyColor={handleCopyColor} allColors={allColors} />
+          <Colour color={color} handleCopyColor={handleCopyColor} allColors={allColors} setColor={setColor} />
       </div>
         <Image image={image} />
     </div>
