@@ -34,7 +34,7 @@ const App = () => {
         </div>
           <FileInput label="Upload Image" handleFile={handleFile}/>
           <Eyedropper openEyedropper={openEyedropper}/>
-          <Colour color={color} handleCopyColor={handleCopyColor} allColors={allColors} setColor={setColor} />
+          <Colour color={color} handleCopyColor={handleCopyColor} allColors={allColors} />
       </div>
         <Image image={image} />
     </div>

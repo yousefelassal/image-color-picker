@@ -1,11 +1,14 @@
 import { motion } from "framer-motion"
-const Colour = ({ color, handleCopyColor, allColors, setColor }) =>  
+const Colour = ({ color, handleCopyColor, allColors }) =>  
 <>
     <div className="mt-8 flex flex-col gap-4">
     <h2 className="text-[#8D8FD2] -mb-2">Click to Copy</h2>
     <motion.button
-            className="px-4 py-2 rounded-2xl shadow-md h-32"
-            animate={{backgroundColor: color}}
+            className="px-4 py-2 rounded-2xl shadow-md h-24"
+            animate={{
+                backgroundColor: color,
+                outlineColor: `${color}cc`
+            }}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => handleCopyColor(color)}
@@ -32,10 +35,7 @@ const Colour = ({ color, handleCopyColor, allColors, setColor }) =>
                         animate={{ opacity: 1, x: 0 }}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
-                        onClick={() => {
-                            setColor(color);
-                            handleCopyColor(color);
-                        }}
+                        onClick={() =>handleCopyColor(color)}
                         className="rounded-full shadow-md h-8 w-8 peer"
                         style={{
                             backgroundColor: color,
