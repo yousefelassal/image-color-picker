@@ -1,6 +1,6 @@
 import {TbClipboardCheck} from "react-icons/tb"
 import { motion } from "framer-motion"
-const Alert = ({color, alert, setAlert}) => {
+const Alert = ({ alert, setAlert}) => {
     if(!alert) return null;
 
     return (
@@ -19,16 +19,17 @@ const Alert = ({color, alert, setAlert}) => {
 
                 <p className="mt-1 text-sm text-gray-700">
                     <span
+                        className="font-semibold"
                         style={{
-                            color: color === "#ffffff" ? "#000000" : color,
+                            color: alert === "#ffffff" ? "#000000" : alert,
                         }}
-                    >{color}</span> has been copied to your clipboard.
+                    >{alert}</span> has been copied to your clipboard.
                 </p>
                 </div>
 
                 <button
                     className="text-gray-500 transition hover:text-gray-600"
-                    onClick={() => setAlert(false)}
+                    onClick={() => setAlert(null)}
                 >
                 <span className="sr-only">Dismiss popup</span>
 

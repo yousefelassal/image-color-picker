@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FileInput from "./components/FileInput";
 import Eyedropper from "./components/Eyedropper";
 import Image from "./components/Image";
@@ -9,8 +9,15 @@ const App = () => {
   const [color, setColor] = useState("#dfe0fb");
   const [image, setImage] = useState(null);
   const [allColors, setAllColors] = useState([]);
-  const [alert, setAlert] = useState(false);
+  const [alert, setAlert] = useState(null);
 
+  useEffect(() => {
+    if (alert) {
+      setTimeout(() => {
+        setAlert(null);
+      }, 2000);
+    }
+  }, [alert]);
 
   const openEyedropper = async () => {
     let eyeDropper = new EyeDropper();
@@ -25,15 +32,12 @@ const App = () => {
 
   const handleCopyColor = async (color) => {
     await navigator.clipboard.writeText(color);
-    setAlert(true);
-    setTimeout(() => {
-      setAlert(false);
-    }, 2000);
+    setAlert(color);
   };
 
   return (
     <>
-    <Alert color={color} alert={alert} setAlert={setAlert}/>
+    <Alert alert={alert} setAlert={setAlert}/>
     <div className="container">
       <div className="flex flex-col bg-[#121215] p-4 border-r border-r-neutral-800 col-shadow">
         <div className="flex gap-1 items-center">
