@@ -3,11 +3,13 @@ import FileInput from "./components/FileInput";
 import Eyedropper from "./components/Eyedropper";
 import Image from "./components/Image";
 import Colour from "./components/Colour";
+import Alert from "./components/Alert";
 
 const App = () => {
   const [color, setColor] = useState("#dfe0fb");
   const [image, setImage] = useState(null);
   const [allColors, setAllColors] = useState([]);
+  const [alert, setAlert] = useState(false);
 
 
   const openEyedropper = async () => {
@@ -26,6 +28,8 @@ const App = () => {
   };
 
   return (
+    <>
+    <Alert message={color} alert={alert}/>
     <div className="container">
       <div className="flex flex-col bg-[#121215] p-4 border-r border-r-neutral-800 col-shadow">
         <div className="flex gap-1 items-center">
@@ -34,10 +38,11 @@ const App = () => {
         </div>
           <FileInput label="Upload Image" handleFile={handleFile}/>
           <Eyedropper openEyedropper={openEyedropper}/>
-          <Colour color={color} handleCopyColor={handleCopyColor} allColors={allColors} />
+          <Colour color={color} handleCopyColor={handleCopyColor} allColors={allColors} setColor={setColor} />
       </div>
         <Image image={image} />
     </div>
+    </>
   );
 }
 
