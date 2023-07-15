@@ -1,6 +1,6 @@
 import {TbClipboardCheck} from "react-icons/tb"
-const Alert = ({message}) => {
-    if(message === "") return null;
+const Alert = ({color, alert}) => {
+    if(!alert) return null;
 
     return (
         <div
@@ -14,7 +14,11 @@ const Alert = ({message}) => {
                 <strong className="block font-medium text-gray-900"> Copied to clipboard </strong>
 
                 <p className="mt-1 text-sm text-gray-700">
-                    {message} has been copied to your clipboard.
+                    <span
+                        style={{
+                            color: color === "#ffffff" ? "#000000" : color,
+                        }}
+                    >{color}</span> has been copied to your clipboard.
                 </p>
                 </div>
 

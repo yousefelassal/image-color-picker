@@ -25,11 +25,15 @@ const App = () => {
 
   const handleCopyColor = async (color) => {
     await navigator.clipboard.writeText(color);
+    setAlert(true);
+    setTimeout(() => {
+      setAlert(false);
+    }, 2000);
   };
 
   return (
     <>
-    <Alert message={color} alert={alert}/>
+    <Alert color={color} alert={alert}/>
     <div className="container">
       <div className="flex flex-col bg-[#121215] p-4 border-r border-r-neutral-800 col-shadow">
         <div className="flex gap-1 items-center">
