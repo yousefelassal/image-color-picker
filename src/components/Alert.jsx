@@ -1,6 +1,6 @@
 import {TbClipboardCheck} from "react-icons/tb"
 import { motion } from "framer-motion"
-const Alert = ({color, alert}) => {
+const Alert = ({color, alert, setAlert}) => {
     if(!alert) return null;
 
     return (
@@ -26,7 +26,10 @@ const Alert = ({color, alert}) => {
                 </p>
                 </div>
 
-                <button className="text-gray-500 transition hover:text-gray-600">
+                <button
+                    className="text-gray-500 transition hover:text-gray-600"
+                    onClick={() => setAlert(false)}
+                >
                 <span className="sr-only">Dismiss popup</span>
 
                 <svg

@@ -33,7 +33,7 @@ const App = () => {
 
   return (
     <>
-    <Alert color={color} alert={alert}/>
+    <Alert color={color} alert={alert} setAlert={setAlert}/>
     <div className="container">
       <div className="flex flex-col bg-[#121215] p-4 border-r border-r-neutral-800 col-shadow">
         <div className="flex gap-1 items-center">
